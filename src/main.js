@@ -12,6 +12,9 @@ import './lib/mui/css/mui.min.css'
 import './lib/mui/css/icons-extra.css'
 // 引入bootstrap文件
 import 'bootstrap/dist/css/bootstrap.css';
+// import jquery from 'jquery';
+import $ from 'jquery';
+import 'bootstrap/dist/js/bootstrap.min.js';
 
 // 引入自己的文件
 // 大盒子

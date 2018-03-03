@@ -42,12 +42,17 @@
       height: 80px;
       border-bottom: 3px solid #7EC0FA;
       padding-left: 20px;
+      position: fixed;  
+      padding-right: 18px;    
     }
   }
   .boxRight {
     flex: 1;
     .navbar {
+      width: 1206px;
       border-radius: 0px;
+      position: fixed;
+      left: 160px;
     }
     .navbar-default{
       background-color: #393D49;
