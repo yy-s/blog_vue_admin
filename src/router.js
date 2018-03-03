@@ -15,6 +15,7 @@ import user from './page/user.vue';
 import userManage from './page/user/userManage.vue';
 
 import about from './page/about.vue';
+import aboutList from './page/about/aboutList.vue'
 
 Vue.use(VueRouter);
 
@@ -25,6 +26,7 @@ var router = new VueRouter({
     {
       path:'/index',
       component:index,
+      redirect:'/index/webMessage',
       children:[
         {path:'webMessage',component:webMessage},
         {path:'adminMessage',component:adminMessage}        
@@ -33,6 +35,7 @@ var router = new VueRouter({
     {
       path:'/content',
       component:content,
+      redirect:'/content/bannerManage',
       children:[
         {path:'bannerManage',component:bannerManage},
         {path:'contentManage',component:contentManage},
@@ -42,11 +45,19 @@ var router = new VueRouter({
     {
       path:'/user',
       component:user,
+      redirect:'/user/userManage',
       children:[
         {path:'userManage',component:userManage}
       ]
     },
-    {path:'/about',component:about}
+    {
+      path:'/about',
+      component:about,
+      redirect:'/about/aboutList',
+      children:[
+        {path:'aboutList',component:aboutList}
+      ]
+    }
   ],
   linkActiveClass: 'active'
 })

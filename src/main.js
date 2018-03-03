@@ -16,6 +16,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import $ from 'jquery';
 import 'bootstrap/dist/js/bootstrap.min.js';
 
+
 // 引入自己的文件
 // 大盒子
 import app from './App.vue';

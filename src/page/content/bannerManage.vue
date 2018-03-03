@@ -6,11 +6,11 @@
       <li class="active">栏目管理</li>
     </ol>
     <p class="title">栏目管理</p>
-    
+
     <div>
       <!-- Tab栏 -->
       <ul class="nav nav-tabs" role="tablist">
-        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">栏目列表</a></li>
+        <li role="presentation" class="active"><a href="#bannerList" aria-controls="bannerList" role="tab" data-toggle="tab">栏目列表</a></li>
         <li role="presentation"><a href="#addBanner" aria-controls="addBanner" role="tab" data-toggle="tab">添加栏目</a></li>
         <li role="presentation"><a href="#addHref" aria-controls="addHref" role="tab" data-toggle="tab">添加外部链接</a></li>
       </ul>
@@ -18,7 +18,7 @@
       <!-- 内容区 -->
       <div class="tab-content">
          <!-- 栏目列表 -->
-        <div role="tabpanel" class="tab-pane active" id="home">
+        <div role="tabpanel" class="tab-pane active" id="bannerList">
           <table>
             <thead>
               <th>排序</th>

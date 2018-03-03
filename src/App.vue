@@ -20,6 +20,7 @@
               <li><router-link to="/about">关于</router-link></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
+              <li><a href="#">返回</a></li>
               <li><a href="#">退出</a></li>
             </ul>
           </div>
