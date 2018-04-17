@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>aboutList</h2>
+    <h1>index</h1>
   </div>
 </template>
 <script>
@@ -9,9 +9,10 @@ export default {
     return {
       
     };
+  },
+  methods:{
   }
 }
 </script>
 <style lang="less" scoped>
-  
 </style>

@@ -2,20 +2,14 @@ import Vue from 'vue';
 // 引入vue-router插件，为了实现路由分发功能
 import VueRouter from 'vue-router'
 
-import index from './page/index.vue';
-import webMessage from './page/index/webMessage.vue';
-import adminMessage from './page/index/adminMessage.vue';
-
-import content from './page/content.vue';
-import bannerManage from './page/content/bannerManage.vue';
-import contentManage from './page/content/contentManage.vue';
-import wordsManage from './page/content/wordsManage.vue';
-
-import user from './page/user.vue';
-import userManage from './page/user/userManage.vue';
-
-import about from './page/about.vue';
-import aboutList from './page/about/aboutList.vue'
+import index from './component/index.vue';
+import userList from './component/userList.vue';
+import addUser from './component/addUser.vue';
+import articleList from './component/articleList.vue';
+import articleCommon from './component/articleCommon.vue';
+import messageOpact from './component/messageOpact.vue';
+import pictureManage from './component/pictureManage.vue';
+import pictureOpact from './component/pictureOpact.vue';
 
 Vue.use(VueRouter);
 
@@ -23,41 +17,14 @@ Vue.use(VueRouter);
 var router = new VueRouter({
   routes: [
     {path:'/',redirect:'/index'},
-    {
-      path:'/index',
-      component:index,
-      redirect:'/index/webMessage',
-      children:[
-        {path:'webMessage',component:webMessage},
-        {path:'adminMessage',component:adminMessage}        
-      ]
-    },
-    {
-      path:'/content',
-      component:content,
-      redirect:'/content/bannerManage',
-      children:[
-        {path:'bannerManage',component:bannerManage},
-        {path:'contentManage',component:contentManage},
-        {path:'wordsManage',component:wordsManage}
-      ]
-    },
-    {
-      path:'/user',
-      component:user,
-      redirect:'/user/userManage',
-      children:[
-        {path:'userManage',component:userManage}
-      ]
-    },
-    {
-      path:'/about',
-      component:about,
-      redirect:'/about/aboutList',
-      children:[
-        {path:'aboutList',component:aboutList}
-      ]
-    }
+    {path:'/index',component:index},
+    {path:'/userList',component:userList},
+    {path:'/addUser',component:addUser},
+    {path:'/articleList',component:articleList},
+    {path:'/articleCommon',component:articleCommon},
+    {path:'/messageOpact',component:messageOpact},
+    {path:'/pictureManage',component:pictureManage},
+    {path:'/pictureOpact',component:pictureOpact}
   ],
   linkActiveClass: 'active'
 })

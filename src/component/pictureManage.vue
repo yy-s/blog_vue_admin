@@ -1,9 +1,6 @@
 <template>
   <div>
-    <ol class="breadcrumb">
-      <li><router-link to="/index">首页</router-link></li>
-      <li class="active">网站信息</li>
-    </ol>
+    <h1>pictureManage</h1>
   </div>
 </template>
 <script>

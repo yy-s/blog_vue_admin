@@ -1,90 +1,138 @@
 <template>
-  <div class="grip">
-    <div class="boxLeft">
-      <!-- logo -->
-      <div class="logo">
-        <img src="./images/logo.png" alt="">
-      </div>
-      <!-- 侧边栏 -->
-      <router-view></router-view>
-    </div>
-    <div class="boxRight">
-      <!-- 头部导航栏 -->
-      <nav class="navbar navbar-default">
-        <div class="container-fluid">
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-              <li><router-link to="/index">首页</router-link></li>
-              <li><router-link to="/content">内容</router-link></li>
-              <li><router-link to="/user">用户</router-link></li>
-              <li><router-link to="/about">关于</router-link></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-              <li><a href="#">返回</a></li>
-              <li><a href="#">退出</a></li>
-            </ul>
-          </div>
+  <div class="box">
+    <div class="left">
+      <div class="user">
+        <div class="admin_user">
+          <img src="./images/user.jpg" alt=""> 
         </div>
-      </nav>
+        <h4>超级管理员</h4>                 
+      </div>
+      <div class="list">
+        <ul>
+          <li>
+            <a href="javascript:;" class="parent">用户管理</a>
+            <ul class="child s">
+              <li><router-link to="/userlist">用户列表</router-link></li>
+              <li><router-link to="/addUser">添加用户</router-link></li>
+            </ul>
+          </li>
+          <li>
+            <a href="javascript:;" class="parent">文章管理</a>
+            <ul class="child s">
+              <li><router-link to="/articleList">文章列表</router-link></li>
+              <li><router-link to="/articleCommon">文章评论</router-link></li>
+            </ul>
+          </li>
+          <li>
+            <a href="javascript:;" class="parent">留言管理</a>
+            <ul class="child s">
+              <li><router-link to="/messageOpact">留言操作</router-link></li>
+            </ul>
+          </li>
+          <li>
+            <a href="javascript:;" class="parent">图片管理</a>
+            <ul class="child s">
+              <li><router-link to="/pictureManage">图片管理</router-link></li>
+              <li><router-link to="/pictureOpact">图片操作</router-link></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
     </div>
+    <router-view></router-view>
   </div>
 </template>
-
 <script>
-</script>
-
-
-<style lang="less" scoped>
-.grip {
-  display: flex;
-  .boxLeft {
-    width: 160px;
-    .logo {
-      height: 80px;
-      border-bottom: 3px solid #7EC0FA;
-      padding-left: 20px;
-      position: fixed;  
-      padding-right: 18px;    
-    }
+$(function(){
+  $('.parent').click(function(){
+    $(this).siblings('.child').toggleClass('s');
+    $(this).parent('li').siblings('li').children('.child').addClass('s');
+  })
+  // $('.p_now').siblings('.child').removeClass('s');
+})
+export default {
+  data() {
+    return {
+      
+    };
   }
-  .boxRight {
-    flex: 1;
-    .navbar {
-      width: 1206px;
-      border-radius: 0px;
-      position: fixed;
-      left: 160px;
-    }
-    .navbar-default{
-      background-color: #393D49;
-      margin-bottom: 0;
-      height: 80px;
-      border: 0;
-      .navbar-header {
+}
+</script>
+<style lang="less" scoped>
+.box {
+  padding: 10px 10px 10px 210px;
+  background-color: #eee;
+  font-family: '微软雅黑';
+  .left {
+    width: 200px;
+    background-color: rgb(58, 56, 56);
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    .user {
+      height: 160px;
+      background-color: #1e1e1e;
+      text-align: center;
+      padding-top: 15px;
+      .admin_user {
+        width: 83px;
+        height: 83px;
+        border-radius: 50%;
+        margin: 0px auto;
+        overflow: hidden;
+        border: 3px solid #ccc;
         img {
-          height: 60px;
-          margin-top: 10px;
-          margin-left: 40px;
-        }   
+          width: 80px;
+          height: 80px;
+        }
       }
-      .navbar-collapse {
-        .navbar-nav {
-          margin-left: 15px;
-          li a {
-            padding: 0 15px;
-            margin-left: 30px;
-            line-height: 80px;
+      h4 {
+        color: #ccc;
+        font-size: 14px;
+        font-weight: 700;
+        margin-top: 20px;
+      }
+    }
+    .list {
+      border-top: 1px solid #ccc;
+      ul {
+        padding: 40px 0 10px 40px;
+        background-color: #1e1e1e;
+        li {
+          line-height: 35px;
+          padding-left: 10px;
+          .parent {
             color: #ccc;
-            font-size: 24px;
+            font-size: 16px;
+            &.p_now {
+              color: #fff;
+              font-weight: 700;
+            }
+          }
+          .child {
+            padding-top: 10px;
+            padding-left: 30px;
+            background-color: rgb(58, 56, 56);
+            &.s {
+              display: none;              
+            }
+            li {
+              line-height: 30px;
+              a {
+                color: #ddd;
+                font-size: 14px;
+                &.now {
+                  color: #fff;
+                  font-weight: 700;                  
+                }
+              }
+            }
           }
         }
-      }  
+      }
     }
   }
 }
-
-.active {
-  color: #fff !important;
-  font-weight: 700;
-}
+  
 </style>
